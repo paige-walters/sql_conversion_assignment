@@ -7,6 +7,8 @@ $(document).ready(function(){
          values[field.name] = field.value;
       });
 
+
+      findData(values);
       getData(values);
    });
 
@@ -20,6 +22,16 @@ function getData(values){
    $.ajax({
       type: "GET",
       url: "/data",
+      data: values,
+      success: function(data){
+         updateDOM(data);
+      }
+   })
+}
+function findData(values){
+   $.ajax({
+      type: "GET",
+      url: "/find",
       data: values,
       success: function(data){
          updateDOM(data);
@@ -72,7 +84,7 @@ function updateDOM(data){
                   "<p>" + data[i].spirit_animal + "</p>" +
                   "<p>" + data[i].address + "</p>" +
                   "<button class='delete btn btn-danger' data-id='" +
-                     data[i]._id + "'>Delete</button>" +
+                     data[i].id + "'>Delete</button>" +
                "</div>";
 
       $("#peopleContainer").append(el);
