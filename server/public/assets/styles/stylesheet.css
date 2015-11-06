@@ -1,5 +1,10 @@
+.jumbotron {
+    background-color: #bfeec2;
+}
+
 .individuals {
     margin: 10px;
+    background-color: #a9eede;
 }
 #submitSearch {
     margin: 3px;

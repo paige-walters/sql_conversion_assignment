@@ -72,7 +72,7 @@ function deletePerson(){
       url: "/data",
       data: deletedId,
       success: function(data){
-
+//A good idea to add an if else statement to the client if true run getData, else show something useful to the user
          getData();
       }
    })
