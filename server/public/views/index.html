@@ -5,18 +5,20 @@
     <title></title>
 
     <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/stylesheet.css">
 
     <script type="text/javascript" src="/vendors/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/scripts/app.js"></script>
 </head>
 <body>
-    <p>What up Zeta?</p>
+    <div class="container">
+    <h3>Find Somebody to Love!</h3>
     <form id="search">
         <input type="text" id="peopleSearch" name="peopleSearch" placeholder="Enter name:">
-        <button id="submitSearch" class="btn btn-info">Submit</button>
+        <button id="submitSearch" class="btn btn-info">Search</button>
     </form>
 
-    <h1>ADD SOMEONE!</h1>
+    <h2>ADD SOMEONE!</h2>
     <form id="addSomeone">
         <input type="text" id="peopleAdd" name="peopleAdd" placeholder="Enter Name">
         <input type="text" id="locationAdd" name="locationAdd" placeholder="Enter Location">
@@ -27,5 +29,7 @@
     </form>
 
     <div id="peopleContainer"></div>
+
+    </div>
 </body>
 </html>

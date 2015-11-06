@@ -7,9 +7,11 @@ $(document).ready(function(){
          values[field.name] = field.value;
       });
 
+      $('#search').find("input[type=text]").val("");
+
 
       findData(values);
-      getData(values);
+      //getData(values);
    });
 
    $("#addSomeone").submit(addSomeone);
@@ -46,6 +48,7 @@ function addSomeone(){
    $.each($(this).serializeArray(), function(i, field){
       values[field.name] = field.value;
    });
+   $('#addSomeone').find("input[type=text]").val("");
 
    $.ajax({
       type: "POST",
@@ -55,6 +58,8 @@ function addSomeone(){
          getData();
       }
    });
+
+
 }
 
 function deletePerson(){
@@ -77,7 +82,7 @@ function updateDOM(data){
    $("#peopleContainer").empty();
 
    for(var i = 0; i < data.length; i++){
-      var el = "<div class='well col-md-3'>" +
+      var el = "<div class='individuals well col-md-3'>" +
                   "<p>" + data[i].name + "</p>" +
                   "<p>" + data[i].location + "</p>" +
                   "<p>" + data[i].age + "</p>" +
